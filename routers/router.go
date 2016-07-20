@@ -1,11 +1,12 @@
 package routers
 
 import (
+	"myapp/controllers"
 	"github.com/astaxie/beego"
-	"go.study/controllers"
+	"github.com/beego/admin"  //admin 包
 )
 
 func init() {
-	beego.Router("/", &controllers.MainController{})
-	beego.Router("/user", &controllers.UserController{})
+    admin.Run()
+    beego.Router("/", &controllers.MainController{})
 }
